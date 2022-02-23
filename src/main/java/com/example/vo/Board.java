@@ -1,5 +1,17 @@
 package com.example.vo;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
+@Getter
+@Setter
+@NoArgsConstructor // 빈 생성자
+@AllArgsConstructor // 전체를 다 바꿀 수 있는 생성자
+@ToString
+
 // Board.java
 public class Board {
 
@@ -10,55 +22,5 @@ public class Board {
     private String content = null;
     private String writer = null;
     private int hit = 0;
-
-    // 2. getter / setter 만들기 (오른쪽버튼 -> Sourse action)
-    public long getNo() {
-        return no;
-    }
-
-    public void setNo(long no) {
-        this.no = no;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getContent() {
-        return content;
-    }
-
-    public void setContent(String content) {
-        this.content = content;
-    }
-
-    public String getWriter() {
-        return writer;
-    }
-
-    public void setWriter(String writer) {
-        this.writer = writer;
-    }
-
-    public int getHit() {
-        return hit;
-    }
-
-    public void setHit(int hit) {
-        this.hit = hit;
-    }
-
-    // 3. toString 만들기
-    @Override
-    public String toString() {
-        return "Board [content=" + content + ", hit=" + hit + ", no=" + no + ", title=" + title + ", writer=" + writer
-                + "]";
-    }
-
-    // 4. 메소드(함수)
 
 }
