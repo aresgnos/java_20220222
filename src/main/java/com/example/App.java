@@ -1,54 +1,44 @@
 package com.example;
 
-import com.example.db.BoardDB;
-// import com.example.db.BoardDB;
-// import com.example.db.BoardDB;
-import com.example.vo.Board;
+import com.example.db.ItemDB;
+import com.example.db.ItemDBImpl;
+import com.example.vo.Item;
 
 // 프로그램 시작 위치
 public class App {
     public static void main(String[] args) {
-        BoardDB obj = new BoardDB();
+        ItemDB obj = new ItemDBImpl();
 
-        Board board = new Board();
-
-        // 추가
-        // board.setNo(152);
-        // board.setTitle("수요일");
-        // board.setContent("내일은 목요일");
-        // board.setWriter("송세라");
-        // board.setHit(0);
-        // int ret = obj.insertData(board);
-        // if (ret == 1) {
-        // System.out.println("추가성공");
-        // } else {
-        // System.out.println("추가실패");
-        // }
+        // 아이템 추가
+        // 빈 것으로 만들어서 넣은 것
+        // 생성자를 이용해서 넣을수도 있다.
+        // = Item item = new Item(0L, 1000L, 2L, "휴지");
+        // Item item = new Item();
+        // item.setName("방구");
+        // item.setPrice(20L);
+        // item.setQuantity(1L);
+        // int ret = obj.inserItem(item);
+        // System.out.println(ret);
 
         // 삭제
-        // board.setNo(151);
-        // int result = obj.deleteData(board);
-        // System.out.println(result);
+        // Item item = new Item();
+        // item.setNo(4L);
+        // int ret = obj.deleteItem(item);
+        // System.out.println(ret);
 
         // 수정
-        // board.setNo(150);
-        // board.setTitle("수정구슬");
-        // board.setContent("수정이 되게 해주세요");
-        // int result = obj.updateData(board);
-        // System.out.println(result);
-
-        // 1개 조회
-        // board.setNo(150);
-        // Board board1 = obj.selectOneData(board);
-
-        // if (board1 != null) {
-        // System.out.println(board1.toString());
-        // }
-
+        Item item = new Item();
+        item.setNo(1L);
+        item.setName("용기");
+        item.setPrice(3000L);
+        item.setQuantity(3L);
+        int ret = obj.updateItem(item);
+        System.out.println(ret);
     }
 }
 
 /*
+ * // Member
  * 객체 생성
  * MemberDB obj = new MemberDB();
  * 
@@ -96,4 +86,97 @@ public class App {
  * for (Member tmp : list) {
  * System.out.println(tmp.toString());
  * }
+ * 
+ * BoardDB obj = new BoardDB();
+ * 
+ * Board board = new Board();
+ * 
+ * 추가
+ * board.setNo(152);
+ * board.setTitle("수요일");
+ * board.setContent("내일은 목요일");
+ * board.setWriter("송세라");
+ * board.setHit(0);
+ * int ret = obj.insertData(board);
+ * if (ret == 1) {
+ * System.out.println("추가성공");
+ * } else {
+ * System.out.println("추가실패");
+ * }
+ * 
+ * 삭제
+ * board.setNo(151);
+ * int result = obj.deleteData(board);
+ * System.out.println(result);
+ * 
+ * 수정
+ * board.setNo(150);
+ * board.setTitle("수정구슬");
+ * board.setContent("수정이 되게 해주세요");
+ * int result = obj.updateData(board);
+ * System.out.println(result);
+ * 
+ * 1개 조회
+ * board.setNo(150);
+ * Board board1 = obj.selectOneData(board);
+ * 
+ * if (board1 != null) {
+ * System.out.println(board1.toString());
+ * }
+ * 
+ * 전체 조회
+ * 
+ */
+
+/*
+ * // 부모가 일을 마무리하지 못했기 때문에 부모 객체가 만들어지지 않는다.
+ * // Parent obj1 = new Parent();
+ * // obj1.printNum();
+ * 
+ * // 전달시에 제일 많이 쓰는 방식
+ * // printchild는 쓸 수 없지
+ * Parent obj2 = new Child1();
+ * obj2.printNum();
+ * obj2.printNum1();
+ * 
+ * // Child1 obj3 = new Child1();
+ * // obj3.printNum();
+ * // obj3.printChild1();
+ * 
+ */
+
+/*
+ * // board
+ * // 클래스명 객체명 = new 생성자();
+ * // BoardDB obj = new BoardDBImpl();
+ * 
+ * // 게시판 글쓰기
+ * // 생성자를 통해서 넣기
+ * // Board board = new Board(3L, "삭제", "삭제해도돼", "이승기", 18);
+ * // 수행
+ * // int ret = obj.insertBoard(board);
+ * // System.out.println(ret);
+ * 
+ * // 게시판 삭제
+ * // Board board = new Board();
+ * // board.setNo(3L);
+ * // int ret = obj.deleteBoard(board);
+ * // System.out.println(ret);
+ * 
+ * // 게시판 수정
+ * // Board board = new Board(2L, "수정", "수정이 돼야해", "나지", 0);
+ * // int ret = obj.updateBoard(board);
+ * // System.out.println(ret);
+ * 
+ * // 게시판 1개 조회
+ * // Board board = new Board();
+ * // board.setNo(1L);
+ * // Board board1 = obj.selectOneBoard(board);
+ * // System.out.println(board1.toString());
+ * 
+ * // 전체 조회
+ * // List<Board> list = obj.selectListBoard();
+ * // for (Board tmp : list) {
+ * // System.out.println(tmp.toString());
+ * // }
  */
