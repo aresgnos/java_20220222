@@ -10,8 +10,8 @@ public interface ItemDB {
     // 시퀀스를 이용해서 물품 등록
     public int inserItem(Item item);
 
-    // 물품 삭제
-    public int deleteItem(Item item);
+    // 물품 삭제 throws Exception 추가
+    public int deleteItem(long code) throws Exception;
 
     // 변경
     public int updateItem(Item item);

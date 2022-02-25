@@ -1,5 +1,11 @@
 package com.example.vo;
 
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+
+@NoArgsConstructor
+@AllArgsConstructor
+
 public class Item {
 
     // 물품번호, 물품명, 가격, 수량

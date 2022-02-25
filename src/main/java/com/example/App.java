@@ -1,5 +1,7 @@
 package com.example;
 
+import java.util.List;
+
 import com.example.db.ItemDB;
 import com.example.db.ItemDBImpl;
 import com.example.vo.Item;
@@ -21,19 +23,59 @@ public class App {
         // System.out.println(ret);
 
         // 삭제
-        // Item item = new Item();
-        // item.setNo(4L);
-        // int ret = obj.deleteItem(item);
+        // try {
+        // int ret = obj.deleteItem(7L);
         // System.out.println(ret);
+        // } catch (Exception e) {
+        // e.printStackTrace();
+        // }
+
+        // 한개 조회 Map<String, Object>
+        // 컬렉션 => 모음, 수집
+
+        // List ex) array => ["aaaa", "bbbb", "cccc"]
+        // 순차적인 것에 용이, 따라서 순차적으로 출력
+        // List<String> list1 = new ArrayList<>();
+
+        // Map ex) json => {"id":"aaa", "name":"bbb", "age":13}
+        // 키를 가지고 넣음, 따라서 필요한 것 꺼낼 때 용이
+        // Map<String, String> map1 = new HashMap<>();
+
+        // Map<String, Object> map = obj.selectOneMapItem(5L);
+        // System.out.println(map.get("ID"));
+        // System.out.println(map.get("NAME"));
+        // System.out.println(map.get("PRICE"));
+        // System.out.println(map.get("QUANTITY"));
+
+        // 한개 조회 Item
+        Item item = obj.selectOneItem(5L);
+        System.out.println(item.getNo());
+        System.out.println(item.getName());
+        System.out.println(item.getPrice());
+        System.out.println(item.getQuantity());
+        // 한방에 나오게
+        System.out.println(item.toString());
 
         // 수정
-        Item item = new Item();
-        item.setNo(1L);
-        item.setName("용기");
-        item.setPrice(3000L);
-        item.setQuantity(3L);
-        int ret = obj.updateItem(item);
-        System.out.println(ret);
+        // Item item = new Item();
+        // item.setNo(1L);
+        // item.setName("용기");
+        // item.setPrice(3000L);
+        // item.setQuantity(3L);
+        // int ret = obj.updateItem(item);
+        // System.out.println(ret);
+
+        // 전체 조회
+        List<Item> list = obj.selectListItem();
+        for (Item tmp : list) {
+            System.out.println(tmp.toString());
+        }
+
+        // 페이지 단위 조회
+        // List<Item> list = obj.selectListPageItem(1);
+        // for (Item tmp : list) {
+        // System.out.println(tmp.toString());
+        // }
     }
 }
 
