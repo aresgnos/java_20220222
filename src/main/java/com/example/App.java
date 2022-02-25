@@ -23,6 +23,7 @@ public class App {
         // System.out.println(ret);
 
         // 삭제
+        // throws Exception으로 오류 처리를 위임하였기 때문에 try, catch를 사용
         // try {
         // int ret = obj.deleteItem(7L);
         // System.out.println(ret);
